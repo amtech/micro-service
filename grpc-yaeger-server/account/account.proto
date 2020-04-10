@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package account;
+
+service Account {
+  rpc CheckBalance (CheckBalanceRequest) returns (CheckBalanceResponse) {};
+  rpc Reduction (ReductionRequest) returns (ReductionResponse) {};
+}
+
+message CheckBalanceRequest{
+  string Account=1;
+}
+
+message CheckBalanceResponse{
+  string Reply=1;
+}
+
+message ReductionRequest{
+  string Account=1;
+  double Amount=2;
+}
+
+message ReductionResponse{
+  string Reply=1;
+}
